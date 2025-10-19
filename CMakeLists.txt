@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.15)
+project(Gesture)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+if(NOT DEFINED OpenCV_DIR)
+    #set(OpenCV_DIR  /usr/lib/x86_64-linux-gnu/cmake/opencv4)
+    set(OpenCV_DIR C:/ruanjian/opencv/build)
+endif()
+find_package(OpenCV REQUIRED)
+if(NOT DEFINED Torch_DIR)
+    #set(Torch_DIR /home/xcc/libtorch28cpu/share/cmake/Torch)
+    set(Torch_DIR C:/ruanjian/libtorch/share/cmake/Torch)
+endif()
+find_package(Torch REQUIRED)
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+include_directories(${TORCH_INCLUDE_DIRS})
+
+add_subdirectory(src)
+add_subdirectory(train)
