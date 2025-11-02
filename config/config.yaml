@@ -1,0 +1,31 @@
+Thread:
+  camera: true
+  audio: true
+  
+Camera:
+  device_id: 0
+  width: 1280
+  height: 720
+
+Audio:
+  path: "audio/xxx.mp3"
+
+Model:
+  is_load: true
+  version: 0 # 0 - train; 1 - deploy
+  path_train: "model/xxx.pt"
+  path_final: "model/xxx.trt"
+  device: 0 # 0 - CPU; 1 - GPU
+  threshold: 0.65
+
+SQL:
+  is_use: true
+  host: ""
+  user: ""
+  pwd: ""
+  name: ""
+  port: 1000
+
+Log:
+  is_save: true
+  path: "Log/xxx.txt"
