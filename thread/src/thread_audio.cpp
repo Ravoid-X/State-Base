@@ -1,10 +1,17 @@
 #include <iostream>
-#include "thread/include/thread_audio.h"
+#include "thread_audio.h"
 using namespace std;
 
-ThreadAudio::ThreadAudio(sys_configshared_ptr<GlobalContext> context)
+ThreadAudio::ThreadAudio(shared_ptr<GlobalContext> context)
     : ThreadBase(context) {
 }
 ThreadAudio::~ThreadAudio() {
+
+}
+bool ThreadAudio::initialize_audio() {
+
+    return true;
+}
+void ThreadAudio::main_loop() {
 
 }

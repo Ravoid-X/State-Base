@@ -30,7 +30,7 @@ void StateMachine::changeState(StateType newState) {
             m_currentState = make_unique<StateBegin>(this);
             break;
         default:
-            cerr<<"[State] Error: "<<newState<<" is not defined"<<endl;
+            cerr<<"[State] Error: State is not defined"<<endl;
             //m_currentState = nullptr; // 或者切换到一个错误状态
             return;
     }

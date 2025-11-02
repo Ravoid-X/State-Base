@@ -1,6 +1,5 @@
-#include <mysql/mysql.h> 
 #include <iostream>
-#include "common/include/mydb.h"
+#include "mydb.h"
 using namespace std;
 
 DatabaseManager::DatabaseManager() : m_connection(nullptr) {
@@ -76,35 +75,35 @@ bool DatabaseManager::select(const string& query, vector<vector<string>>& result
         cerr << "[DBManager] Error: Read cannot execute, not connected." << endl;
         return false;
     }
-    // 执行查询
-    if (mysql_query(m_connection, query.c_str())) {
-        cerr << "[DBManager] Error: Read mysql_query() failed: " 
-                  << mysql_error(m_connection) << endl;
-        return false;
-    }
-    // 存储结果
-    MYSQL_RES* result = mysql_store_result(m_connection);
-    if (!result) {
-        if(mysql_field_count(m_connection) > 0) {
-             cerr << "[DBManager] Error: Read mysql_store_result() failed: "
-                       << mysql_error(m_connection) << endl;
-             return false;
-        }
-        return true; 
-    }
-    // 转换结果
-    results.clear();
-    MYSQL_ROW row;
-    unsigned int num_fields = mysql_num_fields(result);
-    while ((row = mysql_fetch_row(result))) {
-        vector<string> row_data;
-        row_data.reserve(num_fields);
-        for(unsigned int i = 0; i < num_fields; i++) {
-            row_data.push_back(row[i] ? row[i] : "NULL");
-        }
-        results.push_back(row_data);
-    }
-    // 释放内存
-    mysql_free_result(result);
+    // // 执行查询
+    // if (mysql_query(m_connection, query.c_str())) {
+    //     cerr << "[DBManager] Error: Read mysql_query() failed: " 
+    //               << mysql_error(m_connection) << endl;
+    //     return false;
+    // }
+    // // 存储结果
+    // MYSQL_RES* result = mysql_store_result(m_connection);
+    // if (!result) {
+    //     if(mysql_field_count(m_connection) > 0) {
+    //          cerr << "[DBManager] Error: Read mysql_store_result() failed: "
+    //                    << mysql_error(m_connection) << endl;
+    //          return false;
+    //     }
+    //     return true; 
+    // }
+    // // 转换结果
+    // results.clear();
+    // MYSQL_ROW row;
+    // unsigned int num_fields = mysql_num_fields(result);
+    // while ((row = mysql_fetch_row(result))) {
+    //     vector<string> row_data;
+    //     row_data.reserve(num_fields);
+    //     for(unsigned int i = 0; i < num_fields; i++) {
+    //         row_data.push_back(row[i] ? row[i] : "NULL");
+    //     }
+    //     results.push_back(row_data);
+    // }
+    // // 释放内存
+    // mysql_free_result(result);
     return true;
 }

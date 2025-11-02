@@ -3,10 +3,9 @@
 #include <memory>
 #include <vector>
 #include <shared_mutex>
+#include <mysql/mysql.h> 
 using namespace std;
-// 向前声明 MySQL C API 的结构体
-struct st_mysql;
-typedef struct st_mysql MYSQL;
+
 class DatabaseManager {
 public:
     DatabaseManager();

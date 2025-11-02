@@ -1,0 +1,2 @@
+/usr/bin/ar qc libthread_lib.a CMakeFiles/thread_lib.dir/src/thread_audio.cpp.o CMakeFiles/thread_lib.dir/src/thread_camera.cpp.o
+/usr/bin/ranlib libthread_lib.a

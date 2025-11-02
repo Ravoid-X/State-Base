@@ -4,11 +4,9 @@
 #include <sstream>
 #include <stdexcept>
 #include <chrono>
-// third-lib
-#include "yaml-cpp/yaml.h"
 // common
 #include "message.h"
-#include "sysconfig.h"
+#include "mydb.h"
 #include "common/include/global_context.h"
 // state
 #include "state_machine.h" 

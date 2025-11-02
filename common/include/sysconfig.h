@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "yaml-cpp/yaml.h"
+using namespace std;
 struct SysConfig {
     // Thread Parameters
     bool is_use_camera;
@@ -10,7 +12,7 @@ struct SysConfig {
     int camera_width;
     int camera_height;
     // Audio Parameters
-    bool audio_path;
+    string audio_path;
     // Model Parameters
     bool is_load;
     int version;
@@ -29,7 +31,7 @@ struct SysConfig {
     string log_path;
 };
 
-bool loadConfiguration(const string& config_path, SysConfig& sys_config) {
+inline bool loadConfiguration(const string& config_path, SysConfig& sys_config) {
     YAML::Node config;
     try{
         config = YAML::LoadFile(config_path);

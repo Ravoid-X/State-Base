@@ -6,10 +6,10 @@
 #include <opencv2/opencv.hpp>
 #include "sysconfig.h"
 using namespace std;
-
-class DatabaseManager;
+// 添加前向声明
 class ThreadAudio;
-class ThreadCamera; 
+class ThreadCamera;
+class DatabaseManager;
 
 struct GlobalContext {
     // 线程智能指针

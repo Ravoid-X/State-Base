@@ -4,7 +4,7 @@
 
 class ThreadCamera : public ThreadBase {
 public:
-    ThreadCamera(std::shared_ptr<GlobalContext> context);
+    ThreadCamera(shared_ptr<GlobalContext> context);
     virtual ~ThreadCamera();
     bool initialize_camera();
 protected:

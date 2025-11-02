@@ -3,9 +3,9 @@
 
 class ThreadAudio : public ThreadBase {
 public:
-    ThreadAudio(std::shared_ptr<GlobalContext> context);
+    ThreadAudio(shared_ptr<GlobalContext> context);
     virtual ~ThreadAudio();
-    bool initialize_Audio();
+    bool initialize_audio();
 protected:
     virtual void main_loop() override;
 private:
