@@ -1,3 +1,4 @@
 *.txt linguist-language=C++
 *.cmake linguist-language=C++
 *.make linguist-language=C++
+Makefile linguist-language=C++
